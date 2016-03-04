@@ -1,0 +1,30 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to Rails Tutorial</h1>
+    
+    <h2>
+      This is the home page for the 
+      <a href="http://www.openstack.org/">Openstack Tutorial</a>
+    </h2>
+    
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>  
+  </div>
+  
+  <%= link_to image_tag("openstack.png", alt: "openstack logo"),
+              'http://www.openstack.org/' %>
+<% end %>

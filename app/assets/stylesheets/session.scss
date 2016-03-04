@@ -1,0 +1,149 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {background:#fff;}
+
+.mainWrap {padding:0 0 40px 0;
+  width: 1024px;
+}
+.hdr { background: #fff; padding:10px 0; border-bottom:1px solid #d8d8d8;}
+
+
+.hdrRt {float:right; color:#333; width:590px; text-align: right;}
+.tpNav {height:18px; line-height:18px;}
+.tpNav a {color:#d63200; text-decoration:none;}
+.tpNav a:hover {color:#686FB6; text-decoration:none;}
+.custLogo {margin:5px 0 0 0; color:#686FB6; font-size: 16px; line-height:16px;text-align: right;}
+
+.bodyWrap {padding: 0;}
+.leftNav {background: #fff; border-right: 1px solid #ddd; height: 100%; position: absolute; padding: 10px;}
+
+
+.ftr {position:fixed; left:0px; bottom:0px; height:100px; width:100%; margin: 0 auto; background:#fff; line-height:26px; padding:0; color: #333; border-top:1px solid #d8d8d8;}
+
+/* Dropdown Menu in Css - Stacked */
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+/* Left Nav pading change */
+.leftNav .nav > li > a, .topNav .nav > li > a {padding:5px 15px;}
+
+/* Left Nav dropdown with multi-column - starts */
+.dropdown-verticle .dropdown-menu {left:100%; top:0;  border-top-left-radius:0; border-bottom-left-radius:0;}
+.dropdown-verticle .dropdown > a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-verticle .dropdown:hover>a:after{border-left-color:#428BCA;}
+.dropdown-verticle .dropdown-submenu:hover>a:after{border-left-color:#428BCA;}
+.dropdown-verticle .dropdown-menu.multi-column {width:400px; padding:0 20px;}
+.dropdown-verticle .dropdown-menu.multi-column .dropdown-menu {
+        display: block !important;
+        position: static !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        min-width:100px;
+}
+.dropdown-verticle .dropdown-menu.multi-column a {padding:5px;}
+/* Left Nav dropdown with multi-column - ends */
+
+/* top Nav pading change */
+.topNav {padding:10px; background: #fff; border-bottom: 1px solid #ddd;}
+
+/* Left Nav dropdown with multi-column - starts */
+.dropdown-horizontal .dropdown-menu {margin-top:-1px; border-top-left-radius:0; border-top-right-radius:0;}
+.dropdown-horizontal .dropdown > a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 5px 0 5px;border-top-color:#cccccc;margin-top:9px;margin-right:-10px;}
+.dropdown-horizontal .dropdown:hover>a:after {border-top-color:#428BCA;}
+.dropdown-horizontal .dropdown-submenu:hover>a:after{border-left-color:#428BCA;}
+.dropdown-horizontal .dropdown-menu.multi-column {width:400px; padding:0 20px;}
+.dropdown-horizontal .dropdown-menu.multi-column .dropdown-menu {
+        display: block !important;
+        position: static !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        min-width:100px;
+}
+.dropdown-verticle .dropdown-menu.multi-column a {padding:5px;}
+
+@media only screen and (min-width : 768px) {
+    /* Make Navigation Toggle on Desktop Hover */
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+}
+.btn-primary {
+  background: #4d90fe!Important;
+}
+.btn-primary:hover {
+  background: #357ae8!Important;
+}
+
+.copy {
+  font-size: 12px;
+}
+
+
+.form-signin {
+  background-color: #f7f7f7;
+  padding: 20px 50px  20px 50px;
+  margin: 2% auto 25px;
+  width: 354px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+}
+.form-signin .form-signin-heading {
+  font-weight: normal;
+  font-size: 18px;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  padding: 10px;
+  font-size: 13px;
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.label {
+  color:#666;
+  padding: 20px 0 0 0;
+  margin:0;
+  display: block;
+  text-align: left;
+  font-size: 100%;
+}
+
+.error {
+    padding:5px 15px; 
+    margin:2% auto; 
+    width:354px; 
+    color:red; 
+    margin-bottom:-15px; 
+    border-radius:3px;
+    display: none;
+}
+
