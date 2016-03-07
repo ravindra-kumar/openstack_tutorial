@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :users
+  get '/posts/:id/:title' => 'posts#show', :as => :post_with_title
 end
