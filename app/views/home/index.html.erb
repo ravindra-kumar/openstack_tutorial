@@ -1,21 +1,35 @@
 
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-          <% @posts.each do |post| %>
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <% @posts.each do |post| %>
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
+                <!-- Title -->
+                <h1><%= link_to post.title, post_path(post) %> </h1>
                 <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
-
-
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= post.created_at.strftime('%c') %></p>
                 <!-- Post Content -->
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-
+                <p class="lead"><%= post.post_message %></p>
                 <hr>
             </div>
-          <% end %>
+        <% end %>
+        <div class="col-md-4">
+            <!-- Blog Search Well -->
+            <div class="well">
+                <h4>Post Search</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+                <!-- /.input-group -->
+            </div>
         </div>
+    </div>
+    <%= will_paginate @posts %>
 
-        <hr>
+</div>
