@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
   end
   
   def new
@@ -19,6 +18,9 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    #this line is only for testing because local environment mailer is not 
+    #required everytime . In production mode below line is deleted
+     @user.toggle :activated 
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."

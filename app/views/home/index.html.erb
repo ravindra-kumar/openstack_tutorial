@@ -1,10 +1,9 @@
-
 <!-- Page Content -->
 <div class="container">
     <div class="row">
         <% @posts.each do |post| %>
             <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
+            <div class="col-lg-6">
                 <!-- Title -->
                 <h1><%= link_to post.title, post_path(post) %> </h1>
                 <!-- Date/Time -->
@@ -14,22 +13,6 @@
                 <hr>
             </div>
         <% end %>
-        <div class="col-md-4">
-            <!-- Blog Search Well -->
-            <div class="well">
-                <h4>Post Search</h4>
-                <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-                <!-- /.input-group -->
-            </div>
-        </div>
     </div>
     <%= will_paginate @posts %>
-
 </div>
