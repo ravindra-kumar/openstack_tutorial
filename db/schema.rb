@@ -54,14 +54,14 @@ ActiveRecord::Schema.define(version: 20160308091333) do
     t.string   "email",             limit: 255
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
+    t.string   "reset_digest",      limit: 255
+    t.datetime "reset_sent_at"
     t.string   "password_digest",   limit: 255
     t.string   "remember_digest",   limit: 255
     t.boolean  "admin",             limit: 1,   default: false
     t.string   "activation_digest", limit: 255
     t.boolean  "activated",         limit: 1,   default: false
     t.datetime "activated_at"
-    t.string   "reset_digest",      limit: 255
-    t.datetime "reset_sent_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
