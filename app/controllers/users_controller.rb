@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     #this line is only for testing because local environment mailer is not 
     #required everytime . In production mode below line is deleted
-     @user.toggle :activated 
+    @user.toggle :activated 
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."

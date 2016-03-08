@@ -5,10 +5,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email])
+    byebug
     if user && user.authenticate(params[:session][:password])
       if user.activated?
         log_in user
-        redirect_to root_url
+        return_url = session[:return_url].present? ? session[:return_url] : root_url
+        session[:return_url] = nil
+        redirect_to return_url
       else
         message  = "Account not activated. "
         message += "Check your email for the activation link."

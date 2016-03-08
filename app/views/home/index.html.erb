@@ -9,7 +9,7 @@
                 <!-- Date/Time -->
                 <p><span class="glyphicon glyphicon-time"></span> Posted on <%= post.created_at.strftime('%c') %></p>
                 <!-- Post Content -->
-                <p class="lead"><%= post.post_message %></p>
+                <p><%= truncate(post.post_message, :length => 125, :omission => '.....') %></p>
                 <hr>
             </div>
         <% end %>

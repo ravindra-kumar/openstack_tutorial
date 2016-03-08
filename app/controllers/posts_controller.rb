@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :check_user_session, except: [:show]
+  before_action :logged_in_user, except: [:show]
+
   def index
   end
 
@@ -9,12 +10,15 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @post = Post.find params[:id]
   end
 
-  private
-
-  def check_user_session
-    redirect_to login_url unless logged_in? 
+  def put_comment
   end
+
+  # private
+
+  # def check_user_session
+  #   redirect_to login_url unless logged_in? 
+  # end
 end

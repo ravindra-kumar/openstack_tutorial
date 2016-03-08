@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :users
   #get '/posts/:id/:title' => 'posts#show'
   get '/posts/:id', to: 'posts#show', as: 'post'
+  post 'put_comment' => 'posts#put_comment'
 end
