@@ -1,0 +1,8 @@
+<div class="well">
+    <h4>Leave a Comment:</h4>
+      <%= form_tag(put_comment_path, method: "post", role: "form", remote: true) do %>
+       <div class="form-group">
+          <%= text_area_tag 'comment', nil, class: 'form-control create_comment_text', rows:"3", pattern:".{2,100}", required: true %>
+       <%= button_tag "Create", class: "btn btn-primary"%>
+    <% end %>
+</div>
