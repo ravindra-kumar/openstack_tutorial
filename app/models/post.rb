@@ -7,5 +7,14 @@ class Post < ActiveRecord::Base
   scope :get_posts, lambda { |page|
      order('created_at DESC').paginate(page: page)
   }
-  #has_many :comments
+  acts_as_votable
+
+  def like(post, current_user)
+    post.vote_by voter: current_user, vote: 'like'
+  end
+
+  def dislike(post, current_user)
+    post.vote_by voter: current_user, vote: 'bad'
+  end
+
 end

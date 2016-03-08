@@ -19,4 +19,5 @@ Rails.application.routes.draw do
       post 'put_comment'
     end
   end
+  post 'like_or_dislike' => 'posts#like_or_dislike'
 end

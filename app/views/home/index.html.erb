@@ -11,6 +11,9 @@
                 <!-- Post Content -->
                 <p><%= truncate(post.post_message, :length => 125, :omission => '.....') %></p>
                 <hr>
+                <div id="vote_box_<%= post.id %>">
+                  <%= get_link(post, current_user) %>
+                </div>
             </div>
         <% end %>
     </div>

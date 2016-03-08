@@ -1,6 +1,6 @@
 <div class="well">
     <h4>Leave a Comment:</h4>
-      <%= form_tag(put_comment_post_path, method: "post", role: "form", remote: true) do %>
+    <%= form_tag(put_comment_post_path, method: "post", role: "form", remote: true) do %>
         <div class="form-group">
           <%= label_tag 'Title', nil%>
 
@@ -9,6 +9,12 @@
        <div class="form-group">
           <%= text_area_tag 'comment', nil, class: 'form-control create_comment_text', rows:"3", pattern:".{2,100}", required: true %>
         </div>
+        <% get_button(current_user) %>
+      <% if current_user.present? %>
        <%= button_tag "Create", class: "btn btn-primary"%>
+      <% else %>
+       <%= link_to('Create' , login_path, class: 'btn btn-info btn-large', role: "button") %>
+      <% end %>
     <% end %>
 </div>
+

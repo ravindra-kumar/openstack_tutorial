@@ -19,6 +19,8 @@ gem 'sdoc',                    '0.4.0', group: :doc
 gem "acts_as_follower"
 gem 'acts_as_commentable'
 gem 'mysql2'
+gem 'acts_as_votable', '~> 0.10.0'
+
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

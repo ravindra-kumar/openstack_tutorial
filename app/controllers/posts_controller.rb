@@ -22,7 +22,17 @@ class PostsController < ApplicationController
     else
       render text: "Something wrong" 
     end
+  end
 
+  def like_or_dislike
+    @post = Post.find params[:id]
+    if params[:like].to_i == 1
+      @post.like(@post, current_user)
+      like = 1
+    else
+      @post.dislike(@post, current_user)
+      like = 0
+    end
   end
 
 end
