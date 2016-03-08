@@ -11,14 +11,18 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
+    @comments = @post.comments
   end
 
   def put_comment
+    post = Post.find(params[:id])
+    comment = post.comments.build(title: params[:Title], comment: params[:comment], user_id: current_user.id)
+    if comment.save
+      @comments = post.comments
+    else
+      render text: "Something wrong" 
+    end
+
   end
 
-  # private
-
-  # def check_user_session
-  #   redirect_to login_url unless logged_in? 
-  # end
 end

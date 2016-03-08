@@ -7,11 +7,16 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  get    'posts'    =>  'posts#index'
+  #get    'posts'    =>  'posts#index'
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :users
   #get '/posts/:id/:title' => 'posts#show'
   get '/posts/:id', to: 'posts#show', as: 'post'
-  post 'put_comment' => 'posts#put_comment'
+  #post 'put_comment' => 'posts#put_comment'
+  resources :posts do
+    member do
+      post 'put_comment'
+    end
+  end
 end

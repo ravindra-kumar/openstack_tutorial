@@ -7,4 +7,5 @@ class Post < ActiveRecord::Base
   scope :get_posts, lambda { |page|
      order('created_at DESC').paginate(page: page)
   }
+  #has_many :comments
 end
