@@ -5,17 +5,16 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: openstack
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: root
-  password: root
 
 development:
   <<: *default
   database: openstack
+
 
 
 # Warning: The database defined as "test" will be erased and
@@ -23,8 +22,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: openstack
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: openstack

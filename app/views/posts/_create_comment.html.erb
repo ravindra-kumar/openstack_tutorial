@@ -9,7 +9,7 @@
        <div class="form-group">
           <%= text_area_tag 'comment', nil, class: 'form-control create_comment_text', rows:"3", pattern:".{2,100}", required: true %>
         </div>
-        <% get_button(current_user) %>
+        <%= get_button(current_user) %>
     <% end %>
 </div>
 
