@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
   
   def create
+    byebug
     @user = User.new(user_params)
     #this line is only for testing because local environment mailer is not 
     #required everytime . In production mode below line is deleted
