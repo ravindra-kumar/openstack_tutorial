@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_many :posts
-  acts_as_followable
   acts_as_follower
 
 

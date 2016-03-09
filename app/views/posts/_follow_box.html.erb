@@ -1,0 +1,5 @@
+<% if current_user != @post.user%>
+     <div id="follow_user_<%= @post.id %>">
+          <%= follow_user_link(current_user, @post) %>
+     </div>
+ <% end %>

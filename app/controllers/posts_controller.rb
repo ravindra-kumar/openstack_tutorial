@@ -5,11 +5,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    return if params[:post_message].blank?
-    
+    return if params[:post][:post_message].blank? || params[:post][:title].blank?
+    params[:post][:user_id] = current_user.id
+    @post = Post.new(post_params)
+    if @post.save
+      flash[:info] = "Post successfully created"
+      redirect_to root_url
+    else
+      render 'new'
+    end
   end
 
   def new
+    @post = Post.new
   end
 
   def show
@@ -31,11 +39,24 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
     if params[:like].to_i == 1
       @post.like(@post, current_user)
-      like = 1
     else
       @post.dislike(@post, current_user)
-      like = 0
     end
   end
+
+  def follow_or_unfollow
+    @post = Post.find params[:id]
+    if params[:follow].to_i == 1
+      @post.follow_post(current_user)
+    else
+      @post.unfollow_post(current_user)
+    end
+  end
+
+  private
+    
+    def post_params
+      params.require(:post).permit(:title, :post_message, :user_id)
+    end
 
 end

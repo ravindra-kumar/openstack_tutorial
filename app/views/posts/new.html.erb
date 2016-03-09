@@ -1,17 +1,11 @@
-<div class="container-fluid mainWrap">
   <div class="container-fluid">
     <div class="error bg-danger"></div>
-    <%= form_tag(login_path, method: "post", class: "center-block form-signin") do %>
-      <h3 class="form-signin-heading">Sign in</h3>
-      <div class="label">Email</div>
-      <%= text_field_tag "session[email]", nil, class: "form-control", required: "autofocus", pattern: "[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}" %>
-      <div class="label">Password</div>
-      <%= password_field_tag "session[password]", nil, class: "form-control", required: "autofocus" %>
-      <%= submit_tag "Sign in", class: "btn btn-primary btn-block" %>
-      <p style="padding-top:5px;">
-        <%= link_to "Forgot Password?", '#', id: "forgot_password", style: "float:left" %>
-        <%= link_to "Sign up", signup_path, id: "signup", style: "float:right" %>
-      </p>
+    <%= form_tag(posts_path, method: "post") do %>
+      <h3 class="form-signin-heading">New Post</h3>
+      <div class="label">Title</div>
+      <%= text_field_tag "post[title]", nil, class: "form-control", required: true %>
+      <div class="label">Post Message</div>
+      <%= text_area_tag "post[post_message]", nil, class: 'form-control create_post_text', rows:"3", pattern:".{2,1000}", required: true %>
+      <%= submit_tag "Create", class: "btn btn-primary btn-block" %>
     <% end %>
   </div> <!-- /container -->
-</div>

@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
   
   def create
-    byebug
     @user = User.new(user_params)
     #this line is only for testing because local environment mailer is not 
     #required everytime . In production mode below line is deleted
@@ -47,21 +46,7 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url
-  end
-  
-  def following
-    @title = "Following"
-    @user  = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
-    render 'show_follow'
-  end
-  
-  def followers
-    @title = "Followers"
-    @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
-    render 'show_follow'
-  end
+  end  
   
   private
     

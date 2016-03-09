@@ -1,34 +1,20 @@
 
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-lg-8">
-                <h1><%= @post.title %></h1>
-
-                <!-- Author -->
-                <p class="lead">
-                    by <a href="#"><%= @post.name %></a>
-                </p>
-
-                <hr>
-
-                <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @post.created_at.strftime('%c') %></p>
-
-
-                <!-- Post Content -->
-                <p><%= @post.post_message %></p>
-
-                <hr>
-                <%= render partial: 'create_comment' %>
-                <div class="show_comments">
-                    <%= render partial: 'comments' %>
-                </div>
-               
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1><%= @post.title %></h1>
+            <p class="lead">
+             by <a href="#"><%= @post.name %></a>
+             <%= render partial: 'follow_box' %>
+            </p>
+            <hr>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @post.created_at.strftime('%c') %></p>
+            <p><%= @post.post_message %></p>
+            <hr>
+            <%= render partial: 'create_comment' %>
+            <div class="show_comments">
+                <%= render partial: 'comments' %>
             </div>
         </div>
-        <!-- /.row -->
-
-        <hr>
+    </div>
+</div>

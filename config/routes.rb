@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get    'create_post'  => 'posts#new'
   #get    'posts'    =>  'posts#index'
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
     end
   end
   post 'like_or_dislike' => 'posts#like_or_dislike'
+  post 'follow_or_unfollow' => 'posts#follow_or_unfollow'
 end
